@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 3 4 y 5 Misión TIC 2021</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="introduction-web-site">
+            <h1>Bienvenidos a Bicicletas 4-20</h1>
+            <div class="nav-menu-main">
+                <nav clas="main-nav">
+                    <a href="#categoria">Categorias</a>
+                    <a href="#bikes">Bicicletas</a>
+                    <a href="#clients">Clientes</a>
+                    <a href="#messages">Mensajes</a>
+                    <a href="#reservations">Reservaciones</a>
+                    <a href="#reports">Reportes</a>
+                </nav>
+            </div>
+        </div>
+        <h1 id="categoria">Categorias</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Creación Categorias</h2>
+                    <p>Escriba Nombre y la Descripción de la Categoria</p>
+                </div>
+                <div class="consulta-categoria">
+                    <input type="hidden" name="idCategory" id="idCategory" placeholder="ID Categoria">
+                    <input type="text" name="nameCategory" id="nameCategory" placeholder="Nombre Categoria">
+                    <input type="text" name="categoryDescription" id="categoryDescription" placeholder="Descripción de Categoria">
+                    <button onclick="saveCategoria()">Crear Categoria</button>
+                    <button onclick="actualizarCategorias()">Actualizar Categoria</button>
+                </div>
+            </div>
+
+            <div class="card-inner">
+                <div class="captura-datos" id="capturaDatos">
+                    <div class="title-box">
+                        <h2>Categorias Creadas</h2>
+                        <p>Categorias disponibles.</p>
+                    </div>
+                    <button onclick="getCategorias()" id="btnCategorias">Mostrar Categorias</button>
+
+                </div>
+
+                <div class="box-table-category" id="boxCategory">
+                    <table>
+                        <thead id="thead">
+
+
+                        </thead>
+                        <tbody id="ConsultaCategoria">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <h1 id="bikes">Bicicletas</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Creación Bicicletas</h2>
+                    <p>Escriba el nombre, marca, año, descripción y categoria del producto.</p>
+                </div>
+                <div class="consulta-bikes">
+                    <input type="text" name="nameBike" id="nameBike" placeholder="Nombre">
+                    <input type="text" name="marcaBike" id="marcaBike" placeholder="Marca">
+                    <input type="number" name="anoBike" id="anoBike" placeholder="Año">
+                    <input type="text" name="descriptionBike" id="descriptionBike" placeholder="Descripción">
+                    <select id="selectCategory" name="selectCategory"> Seleccione la categoria</select>
+                    <button onclick="insertarBike()">Crear Bicicleta</button>
+                    <button onclick="actualizarBike()">Actualizar Bicicleta</button>
+                </div>
+            </div>
+            <div class="card-inner">
+                <div class="captura-datos" id="capturaDatos">
+                    <div class="title-box">
+                        <h2>Bicicletas Creadas</h2>
+                        <p>Bicicletas Disponibles.</p>
+                        <button onclick="mostrarBikes()" id="btnBikes">Mostrar Bicicletas</button>
+                    </div>
+                </div>
+
+                <div class="box-table-bike" id="boxBike">
+                    <!--  <table>
+                        <thead>
+                            <td>Nombre</td>
+                            <td>Marca</td>
+                            <td>Año</td>
+                            <td>Descripción</td>
+                            <td>Categoria</td>
+                        </thead>
+                        <tbody id="ConsultasBike">
+
+                        </tbody>
+                    </table> -->
+                </div>
+            </div>
+        </div>
+        <h1 id="clients">Clientes</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Clientes</h2>
+                    <p>Bienvenido Registre un nuevo Cliente.</p>
+                </div>
+                <div class="consulta-clientes">
+                    <input type="email" name="emailClient" id="emailClient" placeholder="Correo Eléctronico">
+                    <input type="text" name="passClient" id="passClient" placeholder="Contraseña">
+                    <input type="text" name="nameClient" id="nameClient" placeholder="Nombre">
+                    <input type="number" name="ageClient" id="ageClient" placeholder="Edad">
+                    <button onclick="insertarBike()">Registrar Cliente</button>
+                    <button onclick="actualizarBike()">Actualizar Datos</button>
+                </div>
+            </div>
+            <div class="card-inner">
+                <div class="captura-datos" id="capturaDatos">
+                    <div class="title-box">
+                        <h2>Clientes Registrados</h2>
+                        <p>Base de datos clientes.</p>
+                        <button onclick="mostrarBikes()" id="btnBikes">Mostrar Bicicletas</button>
+                    </div>
+                </div>
+                <div class="box-table-clients" id="boxClients">
+
+                </div>
+            </div>
+        </div>
+        <h1 id="messages">Mensajes</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Creación Bicicletas</h2>
+                    <p>Escriba el nombre, marca, año, descripción y categoria del producto.</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="reservations">Reservaciones</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Creación Bicicletas</h2>
+                    <p>Escriba el nombre, marca, año, descripción y categoria del producto.</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="reports">Reportes</h1>
+        <div class="box-card">
+            <div class="card-inner">
+                <div class="title-box">
+                    <h2>Creación Bicicletas</h2>
+                    <p>Escriba el nombre, marca, año, descripción y categoria del producto.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fin container -->
+    </div>
+
+
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/functionsRetoFinal.js"></script>
+</body>
+
+</html>
